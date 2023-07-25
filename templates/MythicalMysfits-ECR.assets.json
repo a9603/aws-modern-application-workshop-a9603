@@ -1,0 +1,19 @@
+{
+  "version": "32.0.0",
+  "files": {
+    "ce11b10e6821a2f590450e7a66d7390d8f6c93bbcc5d24dfd2c0f16fd05ed6c5": {
+      "source": {
+        "path": "MythicalMysfits-ECR.template.json",
+        "packaging": "file"
+      },
+      "destinations": {
+        "current_account-current_region": {
+          "bucketName": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}",
+          "objectKey": "ce11b10e6821a2f590450e7a66d7390d8f6c93bbcc5d24dfd2c0f16fd05ed6c5.json",
+          "assumeRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-file-publishing-role-${AWS::AccountId}-${AWS::Region}"
+        }
+      }
+    }
+  },
+  "dockerImages": {}
+}

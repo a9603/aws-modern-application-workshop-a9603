@@ -228,48 +228,6 @@
     "aws:cdk:path": "MythicalMysfits-Network/VPC/PublicSubnet2/DefaultRoute"
    }
   },
-  "VPCPublicSubnet2EIP4947BC00": {
-   "Type": "AWS::EC2::EIP",
-   "Properties": {
-    "Domain": "vpc",
-    "Tags": [
-     {
-      "Key": "Name",
-      "Value": "MythicalMysfits-Network/VPC/PublicSubnet2"
-     }
-    ]
-   },
-   "Metadata": {
-    "aws:cdk:path": "MythicalMysfits-Network/VPC/PublicSubnet2/EIP"
-   }
-  },
-  "VPCPublicSubnet2NATGateway3C070193": {
-   "Type": "AWS::EC2::NatGateway",
-   "Properties": {
-    "SubnetId": {
-     "Ref": "VPCPublicSubnet2Subnet74179F39"
-    },
-    "AllocationId": {
-     "Fn::GetAtt": [
-      "VPCPublicSubnet2EIP4947BC00",
-      "AllocationId"
-     ]
-    },
-    "Tags": [
-     {
-      "Key": "Name",
-      "Value": "MythicalMysfits-Network/VPC/PublicSubnet2"
-     }
-    ]
-   },
-   "DependsOn": [
-    "VPCPublicSubnet2DefaultRouteB7481BBA",
-    "VPCPublicSubnet2RouteTableAssociation5A808732"
-   ],
-   "Metadata": {
-    "aws:cdk:path": "MythicalMysfits-Network/VPC/PublicSubnet2/NATGateway"
-   }
-  },
   "VPCPrivateSubnet1Subnet8BCA10E0": {
    "Type": "AWS::EC2::Subnet",
    "Properties": {
@@ -425,7 +383,7 @@
     },
     "DestinationCidrBlock": "0.0.0.0/0",
     "NatGatewayId": {
-     "Ref": "VPCPublicSubnet2NATGateway3C070193"
+     "Ref": "VPCPublicSubnet1NATGatewayE0556630"
     }
    },
    "Metadata": {
@@ -806,6 +764,59 @@
      ]
     }
    ]
+  }
+ },
+ "Outputs": {
+  "ExportsOutputRefVPCPublicSubnet1SubnetB4246D30D84F935B": {
+   "Value": {
+    "Ref": "VPCPublicSubnet1SubnetB4246D30"
+   },
+   "Export": {
+    "Name": "MythicalMysfits-Network:ExportsOutputRefVPCPublicSubnet1SubnetB4246D30D84F935B"
+   }
+  },
+  "ExportsOutputRefVPCPublicSubnet2Subnet74179F3969CC10AD": {
+   "Value": {
+    "Ref": "VPCPublicSubnet2Subnet74179F39"
+   },
+   "Export": {
+    "Name": "MythicalMysfits-Network:ExportsOutputRefVPCPublicSubnet2Subnet74179F3969CC10AD"
+   }
+  },
+  "ExportsOutputRefVPCB9E5F0B4BD23A326": {
+   "Value": {
+    "Ref": "VPCB9E5F0B4"
+   },
+   "Export": {
+    "Name": "MythicalMysfits-Network:ExportsOutputRefVPCB9E5F0B4BD23A326"
+   }
+  },
+  "ExportsOutputRefVPCPrivateSubnet1Subnet8BCA10E01F79A1B7": {
+   "Value": {
+    "Ref": "VPCPrivateSubnet1Subnet8BCA10E0"
+   },
+   "Export": {
+    "Name": "MythicalMysfits-Network:ExportsOutputRefVPCPrivateSubnet1Subnet8BCA10E01F79A1B7"
+   }
+  },
+  "ExportsOutputRefVPCPrivateSubnet2SubnetCFCDAA7AB22CF85D": {
+   "Value": {
+    "Ref": "VPCPrivateSubnet2SubnetCFCDAA7A"
+   },
+   "Export": {
+    "Name": "MythicalMysfits-Network:ExportsOutputRefVPCPrivateSubnet2SubnetCFCDAA7AB22CF85D"
+   }
+  },
+  "ExportsOutputFnGetAttVPCB9E5F0B4CidrBlock723DF8C0": {
+   "Value": {
+    "Fn::GetAtt": [
+     "VPCB9E5F0B4",
+     "CidrBlock"
+    ]
+   },
+   "Export": {
+    "Name": "MythicalMysfits-Network:ExportsOutputFnGetAttVPCB9E5F0B4CidrBlock723DF8C0"
+   }
   }
  },
  "Parameters": {

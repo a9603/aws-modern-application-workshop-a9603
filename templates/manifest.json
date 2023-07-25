@@ -136,7 +136,7 @@
         "validateOnSynth": false,
         "assumeRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-deploy-role-${AWS::AccountId}-${AWS::Region}",
         "cloudFormationExecutionRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-cfn-exec-role-${AWS::AccountId}-${AWS::Region}",
-        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/9f32a1b854b9ea4bccd54b9e243665001724e8bd2154c88750c257836f4c0df8.json",
+        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/b5d700980e3ab306dd7090364a142ba4c5fb4d5e6faa4acfe2a174c657ee834c.json",
         "requiresBootstrapStackVersion": 6,
         "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version",
         "additionalDependencies": [
@@ -216,18 +216,6 @@
           {
             "type": "aws:cdk:logicalId",
             "data": "VPCPublicSubnet2DefaultRouteB7481BBA"
-          }
-        ],
-        "/MythicalMysfits-Network/VPC/PublicSubnet2/EIP": [
-          {
-            "type": "aws:cdk:logicalId",
-            "data": "VPCPublicSubnet2EIP4947BC00"
-          }
-        ],
-        "/MythicalMysfits-Network/VPC/PublicSubnet2/NATGateway": [
-          {
-            "type": "aws:cdk:logicalId",
-            "data": "VPCPublicSubnet2NATGateway3C070193"
           }
         ],
         "/MythicalMysfits-Network/VPC/PrivateSubnet1/Subnet": [
@@ -320,6 +308,42 @@
             "data": "CDKMetadataAvailable"
           }
         ],
+        "/MythicalMysfits-Network/Exports/Output{\"Ref\":\"VPCPublicSubnet1SubnetB4246D30\"}": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ExportsOutputRefVPCPublicSubnet1SubnetB4246D30D84F935B"
+          }
+        ],
+        "/MythicalMysfits-Network/Exports/Output{\"Ref\":\"VPCPublicSubnet2Subnet74179F39\"}": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ExportsOutputRefVPCPublicSubnet2Subnet74179F3969CC10AD"
+          }
+        ],
+        "/MythicalMysfits-Network/Exports/Output{\"Ref\":\"VPCB9E5F0B4\"}": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ExportsOutputRefVPCB9E5F0B4BD23A326"
+          }
+        ],
+        "/MythicalMysfits-Network/Exports/Output{\"Ref\":\"VPCPrivateSubnet1Subnet8BCA10E0\"}": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ExportsOutputRefVPCPrivateSubnet1Subnet8BCA10E01F79A1B7"
+          }
+        ],
+        "/MythicalMysfits-Network/Exports/Output{\"Ref\":\"VPCPrivateSubnet2SubnetCFCDAA7A\"}": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ExportsOutputRefVPCPrivateSubnet2SubnetCFCDAA7AB22CF85D"
+          }
+        ],
+        "/MythicalMysfits-Network/Exports/Output{\"Fn::GetAtt\":[\"VPCB9E5F0B4\",\"CidrBlock\"]}": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ExportsOutputFnGetAttVPCB9E5F0B4CidrBlock723DF8C0"
+          }
+        ],
         "/MythicalMysfits-Network/BootstrapVersion": [
           {
             "type": "aws:cdk:logicalId",
@@ -334,6 +358,222 @@
         ]
       },
       "displayName": "MythicalMysfits-Network"
+    },
+    "MythicalMysfits-ECR.assets": {
+      "type": "cdk:asset-manifest",
+      "properties": {
+        "file": "MythicalMysfits-ECR.assets.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+      }
+    },
+    "MythicalMysfits-ECR": {
+      "type": "aws:cloudformation:stack",
+      "environment": "aws://unknown-account/unknown-region",
+      "properties": {
+        "templateFile": "MythicalMysfits-ECR.template.json",
+        "validateOnSynth": false,
+        "assumeRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-deploy-role-${AWS::AccountId}-${AWS::Region}",
+        "cloudFormationExecutionRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-cfn-exec-role-${AWS::AccountId}-${AWS::Region}",
+        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/ce11b10e6821a2f590450e7a66d7390d8f6c93bbcc5d24dfd2c0f16fd05ed6c5.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version",
+        "additionalDependencies": [
+          "MythicalMysfits-ECR.assets"
+        ],
+        "lookupRole": {
+          "arn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-lookup-role-${AWS::AccountId}-${AWS::Region}",
+          "requiresBootstrapStackVersion": 8,
+          "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+        }
+      },
+      "dependencies": [
+        "MythicalMysfits-ECR.assets"
+      ],
+      "metadata": {
+        "/MythicalMysfits-ECR/Repository/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Repository22E53BBD"
+          }
+        ],
+        "/MythicalMysfits-ECR/CDKMetadata/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadata"
+          }
+        ],
+        "/MythicalMysfits-ECR/CDKMetadata/Condition": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadataAvailable"
+          }
+        ],
+        "/MythicalMysfits-ECR/Exports/Output{\"Fn::GetAtt\":[\"Repository22E53BBD\",\"Arn\"]}": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ExportsOutputFnGetAttRepository22E53BBDArn3AD4E30B"
+          }
+        ],
+        "/MythicalMysfits-ECR/Exports/Output{\"Ref\":\"Repository22E53BBD\"}": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ExportsOutputRefRepository22E53BBD9A9E013B"
+          }
+        ],
+        "/MythicalMysfits-ECR/BootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "BootstrapVersion"
+          }
+        ],
+        "/MythicalMysfits-ECR/CheckBootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CheckBootstrapVersion"
+          }
+        ]
+      },
+      "displayName": "MythicalMysfits-ECR"
+    },
+    "MythicalMysfits-ECS.assets": {
+      "type": "cdk:asset-manifest",
+      "properties": {
+        "file": "MythicalMysfits-ECS.assets.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+      }
+    },
+    "MythicalMysfits-ECS": {
+      "type": "aws:cloudformation:stack",
+      "environment": "aws://unknown-account/unknown-region",
+      "properties": {
+        "templateFile": "MythicalMysfits-ECS.template.json",
+        "validateOnSynth": false,
+        "assumeRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-deploy-role-${AWS::AccountId}-${AWS::Region}",
+        "cloudFormationExecutionRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-cfn-exec-role-${AWS::AccountId}-${AWS::Region}",
+        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/5d42ebde395cb3f16ae7e9958c50fc11af9b90ce9282599b9223d260dc4e00f6.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version",
+        "additionalDependencies": [
+          "MythicalMysfits-ECS.assets"
+        ],
+        "lookupRole": {
+          "arn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-lookup-role-${AWS::AccountId}-${AWS::Region}",
+          "requiresBootstrapStackVersion": 8,
+          "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+        }
+      },
+      "dependencies": [
+        "MythicalMysfits-Network",
+        "MythicalMysfits-ECR",
+        "MythicalMysfits-ECS.assets"
+      ],
+      "metadata": {
+        "/MythicalMysfits-ECS/Cluster/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ClusterEB0386A7"
+          }
+        ],
+        "/MythicalMysfits-ECS/Service/LB/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ServiceLBE9A1ADBC"
+          }
+        ],
+        "/MythicalMysfits-ECS/Service/LB/PublicListener/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ServiceLBPublicListener46709EAA"
+          }
+        ],
+        "/MythicalMysfits-ECS/Service/LB/PublicListener/ECSGroup/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ServiceLBPublicListenerECSGroup0CC8688C"
+          }
+        ],
+        "/MythicalMysfits-ECS/Service/LoadBalancerDNS": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ServiceLoadBalancerDNSEC5B149E"
+          }
+        ],
+        "/MythicalMysfits-ECS/Service/TaskDef/TaskRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ServiceTaskDefTaskRole0CFE2F57"
+          }
+        ],
+        "/MythicalMysfits-ECS/Service/TaskDef/TaskRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ServiceTaskDefTaskRoleDefaultPolicy9CCB4F8E"
+          }
+        ],
+        "/MythicalMysfits-ECS/Service/TaskDef/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ServiceTaskDef1922A00F"
+          }
+        ],
+        "/MythicalMysfits-ECS/Service/TaskDef/MythicalMysfits-Service/LogGroup/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ServiceTaskDefMythicalMysfitsServiceLogGroupD4158160"
+          }
+        ],
+        "/MythicalMysfits-ECS/Service/TaskDef/ExecutionRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ServiceTaskDefExecutionRole919F7BE3"
+          }
+        ],
+        "/MythicalMysfits-ECS/Service/TaskDef/ExecutionRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ServiceTaskDefExecutionRoleDefaultPolicy3073559D"
+          }
+        ],
+        "/MythicalMysfits-ECS/Service/Service/Service": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Service9571FDD8"
+          }
+        ],
+        "/MythicalMysfits-ECS/Service/Service/SecurityGroup/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ServiceSecurityGroupEEA09B68"
+          }
+        ],
+        "/MythicalMysfits-ECS/CDKMetadata/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadata"
+          }
+        ],
+        "/MythicalMysfits-ECS/CDKMetadata/Condition": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadataAvailable"
+          }
+        ],
+        "/MythicalMysfits-ECS/BootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "BootstrapVersion"
+          }
+        ],
+        "/MythicalMysfits-ECS/CheckBootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CheckBootstrapVersion"
+          }
+        ]
+      },
+      "displayName": "MythicalMysfits-ECS"
     },
     "Tree": {
       "type": "cdk:tree",

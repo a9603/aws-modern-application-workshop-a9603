@@ -976,54 +976,6 @@
                       "fqn": "aws-cdk-lib.aws_ec2.CfnRoute",
                       "version": "2.84.0"
                     }
-                  },
-                  "EIP": {
-                    "id": "EIP",
-                    "path": "MythicalMysfits-Network/VPC/PublicSubnet2/EIP",
-                    "attributes": {
-                      "aws:cdk:cloudformation:type": "AWS::EC2::EIP",
-                      "aws:cdk:cloudformation:props": {
-                        "domain": "vpc",
-                        "tags": [
-                          {
-                            "key": "Name",
-                            "value": "MythicalMysfits-Network/VPC/PublicSubnet2"
-                          }
-                        ]
-                      }
-                    },
-                    "constructInfo": {
-                      "fqn": "aws-cdk-lib.aws_ec2.CfnEIP",
-                      "version": "2.84.0"
-                    }
-                  },
-                  "NATGateway": {
-                    "id": "NATGateway",
-                    "path": "MythicalMysfits-Network/VPC/PublicSubnet2/NATGateway",
-                    "attributes": {
-                      "aws:cdk:cloudformation:type": "AWS::EC2::NatGateway",
-                      "aws:cdk:cloudformation:props": {
-                        "subnetId": {
-                          "Ref": "VPCPublicSubnet2Subnet74179F39"
-                        },
-                        "allocationId": {
-                          "Fn::GetAtt": [
-                            "VPCPublicSubnet2EIP4947BC00",
-                            "AllocationId"
-                          ]
-                        },
-                        "tags": [
-                          {
-                            "key": "Name",
-                            "value": "MythicalMysfits-Network/VPC/PublicSubnet2"
-                          }
-                        ]
-                      }
-                    },
-                    "constructInfo": {
-                      "fqn": "aws-cdk-lib.aws_ec2.CfnNatGateway",
-                      "version": "2.84.0"
-                    }
                   }
                 },
                 "constructInfo": {
@@ -1254,7 +1206,7 @@
                         },
                         "destinationCidrBlock": "0.0.0.0/0",
                         "natGatewayId": {
-                          "Ref": "VPCPublicSubnet2NATGateway3C070193"
+                          "Ref": "VPCPublicSubnet1NATGatewayE0556630"
                         }
                       }
                     },
@@ -1391,6 +1343,64 @@
               "version": "10.2.60"
             }
           },
+          "Exports": {
+            "id": "Exports",
+            "path": "MythicalMysfits-Network/Exports",
+            "children": {
+              "Output{\"Ref\":\"VPCPublicSubnet1SubnetB4246D30\"}": {
+                "id": "Output{\"Ref\":\"VPCPublicSubnet1SubnetB4246D30\"}",
+                "path": "MythicalMysfits-Network/Exports/Output{\"Ref\":\"VPCPublicSubnet1SubnetB4246D30\"}",
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.CfnOutput",
+                  "version": "2.84.0"
+                }
+              },
+              "Output{\"Ref\":\"VPCPublicSubnet2Subnet74179F39\"}": {
+                "id": "Output{\"Ref\":\"VPCPublicSubnet2Subnet74179F39\"}",
+                "path": "MythicalMysfits-Network/Exports/Output{\"Ref\":\"VPCPublicSubnet2Subnet74179F39\"}",
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.CfnOutput",
+                  "version": "2.84.0"
+                }
+              },
+              "Output{\"Ref\":\"VPCB9E5F0B4\"}": {
+                "id": "Output{\"Ref\":\"VPCB9E5F0B4\"}",
+                "path": "MythicalMysfits-Network/Exports/Output{\"Ref\":\"VPCB9E5F0B4\"}",
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.CfnOutput",
+                  "version": "2.84.0"
+                }
+              },
+              "Output{\"Ref\":\"VPCPrivateSubnet1Subnet8BCA10E0\"}": {
+                "id": "Output{\"Ref\":\"VPCPrivateSubnet1Subnet8BCA10E0\"}",
+                "path": "MythicalMysfits-Network/Exports/Output{\"Ref\":\"VPCPrivateSubnet1Subnet8BCA10E0\"}",
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.CfnOutput",
+                  "version": "2.84.0"
+                }
+              },
+              "Output{\"Ref\":\"VPCPrivateSubnet2SubnetCFCDAA7A\"}": {
+                "id": "Output{\"Ref\":\"VPCPrivateSubnet2SubnetCFCDAA7A\"}",
+                "path": "MythicalMysfits-Network/Exports/Output{\"Ref\":\"VPCPrivateSubnet2SubnetCFCDAA7A\"}",
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.CfnOutput",
+                  "version": "2.84.0"
+                }
+              },
+              "Output{\"Fn::GetAtt\":[\"VPCB9E5F0B4\",\"CidrBlock\"]}": {
+                "id": "Output{\"Fn::GetAtt\":[\"VPCB9E5F0B4\",\"CidrBlock\"]}",
+                "path": "MythicalMysfits-Network/Exports/Output{\"Fn::GetAtt\":[\"VPCB9E5F0B4\",\"CidrBlock\"]}",
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.CfnOutput",
+                  "version": "2.84.0"
+                }
+              }
+            },
+            "constructInfo": {
+              "fqn": "constructs.Construct",
+              "version": "10.2.60"
+            }
+          },
           "BootstrapVersion": {
             "id": "BootstrapVersion",
             "path": "MythicalMysfits-Network/BootstrapVersion",
@@ -1402,6 +1412,783 @@
           "CheckBootstrapVersion": {
             "id": "CheckBootstrapVersion",
             "path": "MythicalMysfits-Network/CheckBootstrapVersion",
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.CfnRule",
+              "version": "2.84.0"
+            }
+          }
+        },
+        "constructInfo": {
+          "fqn": "aws-cdk-lib.Stack",
+          "version": "2.84.0"
+        }
+      },
+      "MythicalMysfits-ECR": {
+        "id": "MythicalMysfits-ECR",
+        "path": "MythicalMysfits-ECR",
+        "children": {
+          "Repository": {
+            "id": "Repository",
+            "path": "MythicalMysfits-ECR/Repository",
+            "children": {
+              "Resource": {
+                "id": "Resource",
+                "path": "MythicalMysfits-ECR/Repository/Resource",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::ECR::Repository",
+                  "aws:cdk:cloudformation:props": {
+                    "repositoryName": "mythicalmysfits/service"
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_ecr.CfnRepository",
+                  "version": "2.84.0"
+                }
+              }
+            },
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.aws_ecr.Repository",
+              "version": "2.84.0"
+            }
+          },
+          "CDKMetadata": {
+            "id": "CDKMetadata",
+            "path": "MythicalMysfits-ECR/CDKMetadata",
+            "children": {
+              "Default": {
+                "id": "Default",
+                "path": "MythicalMysfits-ECR/CDKMetadata/Default",
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.CfnResource",
+                  "version": "2.84.0"
+                }
+              },
+              "Condition": {
+                "id": "Condition",
+                "path": "MythicalMysfits-ECR/CDKMetadata/Condition",
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.CfnCondition",
+                  "version": "2.84.0"
+                }
+              }
+            },
+            "constructInfo": {
+              "fqn": "constructs.Construct",
+              "version": "10.2.60"
+            }
+          },
+          "Exports": {
+            "id": "Exports",
+            "path": "MythicalMysfits-ECR/Exports",
+            "children": {
+              "Output{\"Fn::GetAtt\":[\"Repository22E53BBD\",\"Arn\"]}": {
+                "id": "Output{\"Fn::GetAtt\":[\"Repository22E53BBD\",\"Arn\"]}",
+                "path": "MythicalMysfits-ECR/Exports/Output{\"Fn::GetAtt\":[\"Repository22E53BBD\",\"Arn\"]}",
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.CfnOutput",
+                  "version": "2.84.0"
+                }
+              },
+              "Output{\"Ref\":\"Repository22E53BBD\"}": {
+                "id": "Output{\"Ref\":\"Repository22E53BBD\"}",
+                "path": "MythicalMysfits-ECR/Exports/Output{\"Ref\":\"Repository22E53BBD\"}",
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.CfnOutput",
+                  "version": "2.84.0"
+                }
+              }
+            },
+            "constructInfo": {
+              "fqn": "constructs.Construct",
+              "version": "10.2.60"
+            }
+          },
+          "BootstrapVersion": {
+            "id": "BootstrapVersion",
+            "path": "MythicalMysfits-ECR/BootstrapVersion",
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.CfnParameter",
+              "version": "2.84.0"
+            }
+          },
+          "CheckBootstrapVersion": {
+            "id": "CheckBootstrapVersion",
+            "path": "MythicalMysfits-ECR/CheckBootstrapVersion",
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.CfnRule",
+              "version": "2.84.0"
+            }
+          }
+        },
+        "constructInfo": {
+          "fqn": "aws-cdk-lib.Stack",
+          "version": "2.84.0"
+        }
+      },
+      "MythicalMysfits-ECS": {
+        "id": "MythicalMysfits-ECS",
+        "path": "MythicalMysfits-ECS",
+        "children": {
+          "Cluster": {
+            "id": "Cluster",
+            "path": "MythicalMysfits-ECS/Cluster",
+            "children": {
+              "Resource": {
+                "id": "Resource",
+                "path": "MythicalMysfits-ECS/Cluster/Resource",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::ECS::Cluster",
+                  "aws:cdk:cloudformation:props": {
+                    "clusterName": "MythicalMysfits-Cluster"
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_ecs.CfnCluster",
+                  "version": "2.84.0"
+                }
+              }
+            },
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.aws_ecs.Cluster",
+              "version": "2.84.0"
+            }
+          },
+          "Service": {
+            "id": "Service",
+            "path": "MythicalMysfits-ECS/Service",
+            "children": {
+              "LB": {
+                "id": "LB",
+                "path": "MythicalMysfits-ECS/Service/LB",
+                "children": {
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "MythicalMysfits-ECS/Service/LB/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::ElasticLoadBalancingV2::LoadBalancer",
+                      "aws:cdk:cloudformation:props": {
+                        "loadBalancerAttributes": [
+                          {
+                            "key": "deletion_protection.enabled",
+                            "value": "false"
+                          }
+                        ],
+                        "scheme": "internet-facing",
+                        "subnets": [
+                          {
+                            "Fn::ImportValue": "MythicalMysfits-Network:ExportsOutputRefVPCPublicSubnet1SubnetB4246D30D84F935B"
+                          },
+                          {
+                            "Fn::ImportValue": "MythicalMysfits-Network:ExportsOutputRefVPCPublicSubnet2Subnet74179F3969CC10AD"
+                          }
+                        ],
+                        "type": "network"
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_elasticloadbalancingv2.CfnLoadBalancer",
+                      "version": "2.84.0"
+                    }
+                  },
+                  "PublicListener": {
+                    "id": "PublicListener",
+                    "path": "MythicalMysfits-ECS/Service/LB/PublicListener",
+                    "children": {
+                      "Resource": {
+                        "id": "Resource",
+                        "path": "MythicalMysfits-ECS/Service/LB/PublicListener/Resource",
+                        "attributes": {
+                          "aws:cdk:cloudformation:type": "AWS::ElasticLoadBalancingV2::Listener",
+                          "aws:cdk:cloudformation:props": {
+                            "defaultActions": [
+                              {
+                                "type": "forward",
+                                "targetGroupArn": {
+                                  "Ref": "ServiceLBPublicListenerECSGroup0CC8688C"
+                                }
+                              }
+                            ],
+                            "loadBalancerArn": {
+                              "Ref": "ServiceLBE9A1ADBC"
+                            },
+                            "port": 80,
+                            "protocol": "TCP"
+                          }
+                        },
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.aws_elasticloadbalancingv2.CfnListener",
+                          "version": "2.84.0"
+                        }
+                      },
+                      "ECSGroup": {
+                        "id": "ECSGroup",
+                        "path": "MythicalMysfits-ECS/Service/LB/PublicListener/ECSGroup",
+                        "children": {
+                          "Resource": {
+                            "id": "Resource",
+                            "path": "MythicalMysfits-ECS/Service/LB/PublicListener/ECSGroup/Resource",
+                            "attributes": {
+                              "aws:cdk:cloudformation:type": "AWS::ElasticLoadBalancingV2::TargetGroup",
+                              "aws:cdk:cloudformation:props": {
+                                "port": 8080,
+                                "protocol": "TCP",
+                                "targetType": "ip",
+                                "vpcId": {
+                                  "Fn::ImportValue": "MythicalMysfits-Network:ExportsOutputRefVPCB9E5F0B4BD23A326"
+                                }
+                              }
+                            },
+                            "constructInfo": {
+                              "fqn": "aws-cdk-lib.aws_elasticloadbalancingv2.CfnTargetGroup",
+                              "version": "2.84.0"
+                            }
+                          }
+                        },
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.aws_elasticloadbalancingv2.NetworkTargetGroup",
+                          "version": "2.84.0"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_elasticloadbalancingv2.NetworkListener",
+                      "version": "2.84.0"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_elasticloadbalancingv2.NetworkLoadBalancer",
+                  "version": "2.84.0"
+                }
+              },
+              "LoadBalancerDNS": {
+                "id": "LoadBalancerDNS",
+                "path": "MythicalMysfits-ECS/Service/LoadBalancerDNS",
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.CfnOutput",
+                  "version": "2.84.0"
+                }
+              },
+              "TaskDef": {
+                "id": "TaskDef",
+                "path": "MythicalMysfits-ECS/Service/TaskDef",
+                "children": {
+                  "TaskRole": {
+                    "id": "TaskRole",
+                    "path": "MythicalMysfits-ECS/Service/TaskDef/TaskRole",
+                    "children": {
+                      "ImportTaskRole": {
+                        "id": "ImportTaskRole",
+                        "path": "MythicalMysfits-ECS/Service/TaskDef/TaskRole/ImportTaskRole",
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.Resource",
+                          "version": "2.84.0"
+                        }
+                      },
+                      "Resource": {
+                        "id": "Resource",
+                        "path": "MythicalMysfits-ECS/Service/TaskDef/TaskRole/Resource",
+                        "attributes": {
+                          "aws:cdk:cloudformation:type": "AWS::IAM::Role",
+                          "aws:cdk:cloudformation:props": {
+                            "assumeRolePolicyDocument": {
+                              "Statement": [
+                                {
+                                  "Action": "sts:AssumeRole",
+                                  "Effect": "Allow",
+                                  "Principal": {
+                                    "Service": "ecs-tasks.amazonaws.com"
+                                  }
+                                }
+                              ],
+                              "Version": "2012-10-17"
+                            }
+                          }
+                        },
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.aws_iam.CfnRole",
+                          "version": "2.84.0"
+                        }
+                      },
+                      "DefaultPolicy": {
+                        "id": "DefaultPolicy",
+                        "path": "MythicalMysfits-ECS/Service/TaskDef/TaskRole/DefaultPolicy",
+                        "children": {
+                          "Resource": {
+                            "id": "Resource",
+                            "path": "MythicalMysfits-ECS/Service/TaskDef/TaskRole/DefaultPolicy/Resource",
+                            "attributes": {
+                              "aws:cdk:cloudformation:type": "AWS::IAM::Policy",
+                              "aws:cdk:cloudformation:props": {
+                                "policyDocument": {
+                                  "Statement": [
+                                    {
+                                      "Action": [
+                                        "ecr:BatchCheckLayerAvailability",
+                                        "ecr:BatchGetImage",
+                                        "ecr:GetAuthorizationToken",
+                                        "ecr:GetDownloadUrlForLayer",
+                                        "logs:CreateLogGroup",
+                                        "logs:CreateLogStream",
+                                        "logs:PutLogEvents"
+                                      ],
+                                      "Effect": "Allow",
+                                      "Resource": "*"
+                                    }
+                                  ],
+                                  "Version": "2012-10-17"
+                                },
+                                "policyName": "ServiceTaskDefTaskRoleDefaultPolicy9CCB4F8E",
+                                "roles": [
+                                  {
+                                    "Ref": "ServiceTaskDefTaskRole0CFE2F57"
+                                  }
+                                ]
+                              }
+                            },
+                            "constructInfo": {
+                              "fqn": "aws-cdk-lib.aws_iam.CfnPolicy",
+                              "version": "2.84.0"
+                            }
+                          }
+                        },
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.aws_iam.Policy",
+                          "version": "2.84.0"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_iam.Role",
+                      "version": "2.84.0"
+                    }
+                  },
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "MythicalMysfits-ECS/Service/TaskDef/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::ECS::TaskDefinition",
+                      "aws:cdk:cloudformation:props": {
+                        "containerDefinitions": [
+                          {
+                            "essential": true,
+                            "image": {
+                              "Fn::Join": [
+                                "",
+                                [
+                                  {
+                                    "Fn::Select": [
+                                      4,
+                                      {
+                                        "Fn::Split": [
+                                          ":",
+                                          {
+                                            "Fn::ImportValue": "MythicalMysfits-ECR:ExportsOutputFnGetAttRepository22E53BBDArn3AD4E30B"
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  },
+                                  ".dkr.ecr.",
+                                  {
+                                    "Fn::Select": [
+                                      3,
+                                      {
+                                        "Fn::Split": [
+                                          ":",
+                                          {
+                                            "Fn::ImportValue": "MythicalMysfits-ECR:ExportsOutputFnGetAttRepository22E53BBDArn3AD4E30B"
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  },
+                                  ".",
+                                  {
+                                    "Ref": "AWS::URLSuffix"
+                                  },
+                                  "/",
+                                  {
+                                    "Fn::ImportValue": "MythicalMysfits-ECR:ExportsOutputRefRepository22E53BBD9A9E013B"
+                                  },
+                                  ":latest"
+                                ]
+                              ]
+                            },
+                            "name": "MythicalMysfits-Service",
+                            "portMappings": [
+                              {
+                                "containerPort": 8080,
+                                "protocol": "tcp"
+                              }
+                            ],
+                            "logConfiguration": {
+                              "logDriver": "awslogs",
+                              "options": {
+                                "awslogs-group": {
+                                  "Ref": "ServiceTaskDefMythicalMysfitsServiceLogGroupD4158160"
+                                },
+                                "awslogs-stream-prefix": "Service",
+                                "awslogs-region": {
+                                  "Ref": "AWS::Region"
+                                }
+                              }
+                            }
+                          }
+                        ],
+                        "cpu": "256",
+                        "executionRoleArn": {
+                          "Fn::GetAtt": [
+                            "ServiceTaskDefExecutionRole919F7BE3",
+                            "Arn"
+                          ]
+                        },
+                        "family": "MythicalMysfitsECSServiceTaskDefC4F1CC99",
+                        "memory": "512",
+                        "networkMode": "awsvpc",
+                        "requiresCompatibilities": [
+                          "FARGATE"
+                        ],
+                        "taskRoleArn": {
+                          "Fn::GetAtt": [
+                            "ServiceTaskDefTaskRole0CFE2F57",
+                            "Arn"
+                          ]
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_ecs.CfnTaskDefinition",
+                      "version": "2.84.0"
+                    }
+                  },
+                  "MythicalMysfits-Service": {
+                    "id": "MythicalMysfits-Service",
+                    "path": "MythicalMysfits-ECS/Service/TaskDef/MythicalMysfits-Service",
+                    "children": {
+                      "LogGroup": {
+                        "id": "LogGroup",
+                        "path": "MythicalMysfits-ECS/Service/TaskDef/MythicalMysfits-Service/LogGroup",
+                        "children": {
+                          "Resource": {
+                            "id": "Resource",
+                            "path": "MythicalMysfits-ECS/Service/TaskDef/MythicalMysfits-Service/LogGroup/Resource",
+                            "attributes": {
+                              "aws:cdk:cloudformation:type": "AWS::Logs::LogGroup",
+                              "aws:cdk:cloudformation:props": {}
+                            },
+                            "constructInfo": {
+                              "fqn": "aws-cdk-lib.aws_logs.CfnLogGroup",
+                              "version": "2.84.0"
+                            }
+                          }
+                        },
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.aws_logs.LogGroup",
+                          "version": "2.84.0"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_ecs.ContainerDefinition",
+                      "version": "2.84.0"
+                    }
+                  },
+                  "ExecutionRole": {
+                    "id": "ExecutionRole",
+                    "path": "MythicalMysfits-ECS/Service/TaskDef/ExecutionRole",
+                    "children": {
+                      "ImportExecutionRole": {
+                        "id": "ImportExecutionRole",
+                        "path": "MythicalMysfits-ECS/Service/TaskDef/ExecutionRole/ImportExecutionRole",
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.Resource",
+                          "version": "2.84.0"
+                        }
+                      },
+                      "Resource": {
+                        "id": "Resource",
+                        "path": "MythicalMysfits-ECS/Service/TaskDef/ExecutionRole/Resource",
+                        "attributes": {
+                          "aws:cdk:cloudformation:type": "AWS::IAM::Role",
+                          "aws:cdk:cloudformation:props": {
+                            "assumeRolePolicyDocument": {
+                              "Statement": [
+                                {
+                                  "Action": "sts:AssumeRole",
+                                  "Effect": "Allow",
+                                  "Principal": {
+                                    "Service": "ecs-tasks.amazonaws.com"
+                                  }
+                                }
+                              ],
+                              "Version": "2012-10-17"
+                            }
+                          }
+                        },
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.aws_iam.CfnRole",
+                          "version": "2.84.0"
+                        }
+                      },
+                      "DefaultPolicy": {
+                        "id": "DefaultPolicy",
+                        "path": "MythicalMysfits-ECS/Service/TaskDef/ExecutionRole/DefaultPolicy",
+                        "children": {
+                          "Resource": {
+                            "id": "Resource",
+                            "path": "MythicalMysfits-ECS/Service/TaskDef/ExecutionRole/DefaultPolicy/Resource",
+                            "attributes": {
+                              "aws:cdk:cloudformation:type": "AWS::IAM::Policy",
+                              "aws:cdk:cloudformation:props": {
+                                "policyDocument": {
+                                  "Statement": [
+                                    {
+                                      "Action": [
+                                        "ecr:BatchCheckLayerAvailability",
+                                        "ecr:BatchGetImage",
+                                        "ecr:GetDownloadUrlForLayer"
+                                      ],
+                                      "Effect": "Allow",
+                                      "Resource": {
+                                        "Fn::ImportValue": "MythicalMysfits-ECR:ExportsOutputFnGetAttRepository22E53BBDArn3AD4E30B"
+                                      }
+                                    },
+                                    {
+                                      "Action": [
+                                        "ec2:AttachNetworkInterface",
+                                        "ec2:CreateNetworkInterface",
+                                        "ec2:CreateNetworkInterfacePermission",
+                                        "ec2:DeleteNetworkInterface",
+                                        "ec2:DeleteNetworkInterfacePermission",
+                                        "ec2:Describe*",
+                                        "ec2:DetachNetworkInterface",
+                                        "ecr:GetAuthorizationToken",
+                                        "elasticloadbalancing:DeregisterInstancesFromLoadBalancer",
+                                        "elasticloadbalancing:DeregisterTargets",
+                                        "elasticloadbalancing:Describe*",
+                                        "elasticloadbalancing:RegisterInstancesWithLoadBalancer",
+                                        "elasticloadbalancing:RegisterTargets",
+                                        "iam:PassRole",
+                                        "logs:CreateLogGroup",
+                                        "logs:DescribeLogStreams"
+                                      ],
+                                      "Effect": "Allow",
+                                      "Resource": "*"
+                                    },
+                                    {
+                                      "Action": [
+                                        "logs:CreateLogStream",
+                                        "logs:PutLogEvents"
+                                      ],
+                                      "Effect": "Allow",
+                                      "Resource": {
+                                        "Fn::GetAtt": [
+                                          "ServiceTaskDefMythicalMysfitsServiceLogGroupD4158160",
+                                          "Arn"
+                                        ]
+                                      }
+                                    }
+                                  ],
+                                  "Version": "2012-10-17"
+                                },
+                                "policyName": "ServiceTaskDefExecutionRoleDefaultPolicy3073559D",
+                                "roles": [
+                                  {
+                                    "Ref": "ServiceTaskDefExecutionRole919F7BE3"
+                                  }
+                                ]
+                              }
+                            },
+                            "constructInfo": {
+                              "fqn": "aws-cdk-lib.aws_iam.CfnPolicy",
+                              "version": "2.84.0"
+                            }
+                          }
+                        },
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.aws_iam.Policy",
+                          "version": "2.84.0"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_iam.Role",
+                      "version": "2.84.0"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_ecs.FargateTaskDefinition",
+                  "version": "2.84.0"
+                }
+              },
+              "Service": {
+                "id": "Service",
+                "path": "MythicalMysfits-ECS/Service/Service",
+                "children": {
+                  "Service": {
+                    "id": "Service",
+                    "path": "MythicalMysfits-ECS/Service/Service/Service",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::ECS::Service",
+                      "aws:cdk:cloudformation:props": {
+                        "cluster": {
+                          "Ref": "ClusterEB0386A7"
+                        },
+                        "deploymentConfiguration": {
+                          "maximumPercent": 200,
+                          "minimumHealthyPercent": 50
+                        },
+                        "desiredCount": 1,
+                        "enableEcsManagedTags": false,
+                        "healthCheckGracePeriodSeconds": 60,
+                        "launchType": "FARGATE",
+                        "loadBalancers": [
+                          {
+                            "targetGroupArn": {
+                              "Ref": "ServiceLBPublicListenerECSGroup0CC8688C"
+                            },
+                            "containerName": "MythicalMysfits-Service",
+                            "containerPort": 8080
+                          }
+                        ],
+                        "networkConfiguration": {
+                          "awsvpcConfiguration": {
+                            "assignPublicIp": "DISABLED",
+                            "subnets": [
+                              {
+                                "Fn::ImportValue": "MythicalMysfits-Network:ExportsOutputRefVPCPrivateSubnet1Subnet8BCA10E01F79A1B7"
+                              },
+                              {
+                                "Fn::ImportValue": "MythicalMysfits-Network:ExportsOutputRefVPCPrivateSubnet2SubnetCFCDAA7AB22CF85D"
+                              }
+                            ],
+                            "securityGroups": [
+                              {
+                                "Fn::GetAtt": [
+                                  "ServiceSecurityGroupEEA09B68",
+                                  "GroupId"
+                                ]
+                              }
+                            ]
+                          }
+                        },
+                        "taskDefinition": {
+                          "Ref": "ServiceTaskDef1922A00F"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_ecs.CfnService",
+                      "version": "2.84.0"
+                    }
+                  },
+                  "SecurityGroup": {
+                    "id": "SecurityGroup",
+                    "path": "MythicalMysfits-ECS/Service/Service/SecurityGroup",
+                    "children": {
+                      "Resource": {
+                        "id": "Resource",
+                        "path": "MythicalMysfits-ECS/Service/Service/SecurityGroup/Resource",
+                        "attributes": {
+                          "aws:cdk:cloudformation:type": "AWS::EC2::SecurityGroup",
+                          "aws:cdk:cloudformation:props": {
+                            "groupDescription": "MythicalMysfits-ECS/Service/Service/SecurityGroup",
+                            "securityGroupEgress": [
+                              {
+                                "cidrIp": "0.0.0.0/0",
+                                "description": "Allow all outbound traffic by default",
+                                "ipProtocol": "-1"
+                              }
+                            ],
+                            "securityGroupIngress": [
+                              {
+                                "cidrIp": {
+                                  "Fn::ImportValue": "MythicalMysfits-Network:ExportsOutputFnGetAttVPCB9E5F0B4CidrBlock723DF8C0"
+                                },
+                                "ipProtocol": "tcp",
+                                "fromPort": 8080,
+                                "toPort": 8080,
+                                "description": {
+                                  "Fn::Join": [
+                                    "",
+                                    [
+                                      "from ",
+                                      {
+                                        "Fn::ImportValue": "MythicalMysfits-Network:ExportsOutputFnGetAttVPCB9E5F0B4CidrBlock723DF8C0"
+                                      },
+                                      ":8080"
+                                    ]
+                                  ]
+                                }
+                              }
+                            ],
+                            "vpcId": {
+                              "Fn::ImportValue": "MythicalMysfits-Network:ExportsOutputRefVPCB9E5F0B4BD23A326"
+                            }
+                          }
+                        },
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.aws_ec2.CfnSecurityGroup",
+                          "version": "2.84.0"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_ec2.SecurityGroup",
+                      "version": "2.84.0"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_ecs.FargateService",
+                  "version": "2.84.0"
+                }
+              }
+            },
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.aws_ecs_patterns.NetworkLoadBalancedFargateService",
+              "version": "2.84.0"
+            }
+          },
+          "CDKMetadata": {
+            "id": "CDKMetadata",
+            "path": "MythicalMysfits-ECS/CDKMetadata",
+            "children": {
+              "Default": {
+                "id": "Default",
+                "path": "MythicalMysfits-ECS/CDKMetadata/Default",
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.CfnResource",
+                  "version": "2.84.0"
+                }
+              },
+              "Condition": {
+                "id": "Condition",
+                "path": "MythicalMysfits-ECS/CDKMetadata/Condition",
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.CfnCondition",
+                  "version": "2.84.0"
+                }
+              }
+            },
+            "constructInfo": {
+              "fqn": "constructs.Construct",
+              "version": "10.2.60"
+            }
+          },
+          "BootstrapVersion": {
+            "id": "BootstrapVersion",
+            "path": "MythicalMysfits-ECS/BootstrapVersion",
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.CfnParameter",
+              "version": "2.84.0"
+            }
+          },
+          "CheckBootstrapVersion": {
+            "id": "CheckBootstrapVersion",
+            "path": "MythicalMysfits-ECS/CheckBootstrapVersion",
             "constructInfo": {
               "fqn": "aws-cdk-lib.CfnRule",
               "version": "2.84.0"

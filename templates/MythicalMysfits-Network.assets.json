@@ -14,7 +14,7 @@
         }
       }
     },
-    "9f32a1b854b9ea4bccd54b9e243665001724e8bd2154c88750c257836f4c0df8": {
+    "b5d700980e3ab306dd7090364a142ba4c5fb4d5e6faa4acfe2a174c657ee834c": {
       "source": {
         "path": "MythicalMysfits-Network.template.json",
         "packaging": "file"
@@ -22,7 +22,7 @@
       "destinations": {
         "current_account-current_region": {
           "bucketName": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}",
-          "objectKey": "9f32a1b854b9ea4bccd54b9e243665001724e8bd2154c88750c257836f4c0df8.json",
+          "objectKey": "b5d700980e3ab306dd7090364a142ba4c5fb4d5e6faa4acfe2a174c657ee834c.json",
           "assumeRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-file-publishing-role-${AWS::AccountId}-${AWS::Region}"
         }
       }
